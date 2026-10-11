@@ -79,36 +79,125 @@ class ForjaSplashPage extends StatelessWidget {
               ),
 
               // Área clicável posicionada sobre COMEÇAR.
-              Positioned(
+             Positioned(
+                  left: constraints.maxWidth * 0.18,
+                  right: constraints.maxWidth * 0.18,
+                  bottom: constraints.maxHeight * 0.16,
+                  height: constraints.maxHeight * 0.10,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => _abrirCriacao(context),
+                      borderRadius: BorderRadius.circular(18),
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFF35006B),
+                              Color(0xFF19002F),
+                              Color(0xFF35006B),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(18),
+                          border: Border.all(
+                            color: const Color(0xFFE34BFF),
+                            width: 1.5,
+                          ),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0xFFB52BFF),
+                              blurRadius: 10,
+                              spreadRadius: 1,
+                            ),
+                          ],
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'COMEÇAR',
+                              style: TextStyle(
+                                color: Color(0xFFFFF0FF),
+                                fontSize: 18,
+                                letterSpacing: 2,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(width: 35),
+                            Icon(
+                              Icons.chevron_right,
+                              color: Color(0xFFFFF0FF),
+                              size: 26,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            Positioned(
                 left: constraints.maxWidth * 0.18,
                 right: constraints.maxWidth * 0.18,
-                bottom: constraints.maxHeight * 0.16,
-                height: constraints.maxHeight * 0.10,
+                bottom: constraints.maxHeight * 0.06,
+                height: constraints.maxHeight * 0.08,
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    onTap: () => _abrirCriacao(context),
+                    onTap: () => _abrirLogin(context),
                     borderRadius: BorderRadius.circular(18),
-                    splashColor: Colors.white12,
-                    child: const SizedBox.expand(),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color(0xFF10051F),
+                            Color(0xFF080315),
+                            Color(0xFF180729),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(18),
+                        border: Border.all(
+                          color: const Color(0xFF922BFF),
+                          width: 1.3,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0xFF7B20FF),
+                            blurRadius: 9,
+                          ),
+                        ],
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.person_outline,
+                            color: Color(0xFFDDBBFF),
+                            size: 23,
+                          ),
+                          SizedBox(width: 18),
+                          Text(
+                            '│',
+                            style: TextStyle(
+                              color: Color(0xFF922BFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(width: 18),
+                          Text(
+                            'LOGIN',
+                            style: TextStyle(
+                              color: Color(0xFFD8C6E8),
+                              fontSize: 13,
+                              letterSpacing: 2,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
-             Positioned(
-              left: constraints.maxWidth * 0.18,
-              right: constraints.maxWidth * 0.18,
-              bottom: constraints.maxHeight * 0.06,
-              height: constraints.maxHeight * 0.08,
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () => _abrirLogin(context),
-                  borderRadius: BorderRadius.circular(18),
-                  splashColor: Colors.white12,
-                  child: const SizedBox.expand(),
-                ),
-              ),
-            ),
             ],
           );
         },

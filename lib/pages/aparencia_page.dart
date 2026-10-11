@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:forja/pages/personalizacao.dart';
 
 class aparenciapage extends StatefulWidget {
   const aparenciapage({super.key});
@@ -169,14 +170,12 @@ class _EscolhaGeneroPageState extends State<aparenciapage> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Gênero selecionado: '
-                              '$generoSelecionado',
-                            ),
-                          ),
-                        );
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AparenciaScreen (),
+                        ),
+                      );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: roxo,
