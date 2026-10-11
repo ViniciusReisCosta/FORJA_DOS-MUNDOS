@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:forja/pages/aparencia_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -81,8 +82,8 @@ class ForjaSplashPage extends StatelessWidget {
               Positioned(
                 left: constraints.maxWidth * 0.18,
                 right: constraints.maxWidth * 0.18,
-                bottom: constraints.maxHeight * 0.22,
-                height: constraints.maxHeight * 0.08,
+                bottom: constraints.maxHeight * 0.16,
+                height: constraints.maxHeight * 0.10,
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -96,8 +97,8 @@ class ForjaSplashPage extends StatelessWidget {
              Positioned(
               left: constraints.maxWidth * 0.18,
               right: constraints.maxWidth * 0.18,
-              bottom: constraints.maxHeight * 0.14,
-              height: constraints.maxHeight * 0.06,
+              bottom: constraints.maxHeight * 0.06,
+              height: constraints.maxHeight * 0.08,
               child: Material(
                 color: Colors.transparent,
                 child: InkWell(
@@ -343,13 +344,11 @@ class _CriacaoPersonagemPageState
                           shadowColor: Colors.transparent,
                         ),
                         onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Classe escolhida: $classeSelecionada',
-                              ),
-                            ),
-                          );
+                           Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const aparenciapage(),
+                          ),
+                        );
                         },
                         child: const Text(
                           'PRÓXIMO  ›',
